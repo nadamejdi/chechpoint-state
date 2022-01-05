@@ -11,7 +11,7 @@ class App extends React.Component{
   };
   handleName =(e) => {
     this.setState({
-      name:e.traget.value
+      name:e.target.value
 
     });
   }

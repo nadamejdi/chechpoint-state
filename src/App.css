@@ -1,7 +1,17 @@
+.img{
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 80px;
+  width: 80px;
+}
 .App {
   text-align: center;
-}
 
+}
+.Back{
+  background-color: hotpink;
+  text-align: center;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

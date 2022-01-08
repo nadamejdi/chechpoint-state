@@ -1,52 +1,33 @@
-import React from "react";
-import myWonderfulImage from "./imagee.jpg"
+import React, { Component } from "react";
+import Profil from "./profil";
 import  "./App.css"
 
 class App extends React.Component{
-  state={
-    name: 'nada',
-    bio:'Nada Mejdi',
-    imageSrc:<img  className= "img" src={myWonderfulImage} alt ='imagee' />,
-    profession:'Dev'
-
+  state = {
+    isVisible: false
   };
-  componentDidMount(){
-    console.log('classe component did mount');
-  }
-  componentDidUpdate(){
-    console.log('classe component did update');
 
-  }
-  componentWillUnmount(){
-    console.log('classe component did unmount');
+  toggleVisibility = () => {
+    this.setState({ isVisible: !this.state.isVisible });
+  };
 
-  }
- /*handleName =(e) => {
-    this.setState({
-      name:e.target.value
+  render() {
+    return (
+      <div className="App">
+        
+        <button  onClick={this.toggleVisibility}>
+         toggle
+        </button>
+        
+        {this.state.isVisible && <Profil/>}
+      </div>
+ )
 
-    });
-  }
-    /*handleClick =(e) =>{
-      this.setState(
-        {bio:'Nada nada'}
-      );
-  };*/
  
-  render(){
-    return<div className="Back"> 
-    
-  {/*<h1> <input value = {this.state.name} onChange={this.handleName} placeholder="name"/></h1>*/}
-   <h1> {this.state.bio}</h1>
-   <h1> {this.state.imageSrc}</h1>
-   <h1>{this.state.profession}</h1>
-   <h1>{this.state.name}</h1>
-   
-  <button onClick={this.handleClick}> ClickMe</button>
-{/*<button onClick={() => setVisible}>Click</button>*/}
-   </div>
-
-  }
 }
+}
+
+ 
+
 
 export default App;
